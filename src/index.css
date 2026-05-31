@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+
+/* Tema minimalista com clima de investigacao: carvao, sepia e dourado. */
+@theme {
+  --color-ink: #14110d;
+  --color-coal: #1c1a16;
+  --color-slate: #2a2722;
+  --color-line: #3a352d;
+  --color-parchment: #ece3d2;
+  --color-muted: #9b9282;
+  --color-brass: #c8a45a;
+  --color-brass-soft: #e0c98b;
+  --color-rust: #b5563f;
+  --color-emerald: #6f8a5f;
+
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-ink);
+  color: var(--color-parchment);
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Textura sutil de fundo */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at top, rgba(200, 164, 90, 0.06), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.4), transparent 70%);
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Scrollbar discreta */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-coal);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 6px;
+}
