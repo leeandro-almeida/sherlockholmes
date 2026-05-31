@@ -1,9 +1,7 @@
 import axios, { type AxiosError } from 'axios';
 import { session } from './session';
 
-const baseURL = import.meta.env.VITE_API_URL ?? 'http://localhost:3333';
-
-export const api = axios.create({ baseURL });
+export const api = axios.create({ baseURL: "/api" });
 
 // Anexa automaticamente o token adequado a cada requisicao.
 api.interceptors.request.use((config) => {
